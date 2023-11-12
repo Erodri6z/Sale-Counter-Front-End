@@ -33,9 +33,9 @@ input[type="file"] {
 .label {
   width: 100%;
   display: flex;
-  justify-content: end;
+  justify-content: left;
   align-items: center;
-  margin-bottom: 8px;
+  margin: 1px 0px 2px 30px
 }
 
 .button {
@@ -43,5 +43,5 @@ input[type="file"] {
 }
 
 .form > label:last-of-type {
-  margin-bottom: 16px;
+  margin-bottom: 1px;
 }
