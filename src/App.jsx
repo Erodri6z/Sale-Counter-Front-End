@@ -1,5 +1,5 @@
 // npm modules
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Routes, Route, useNavigate } from 'react-router-dom'
 
 // pages
@@ -15,12 +15,17 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 
 // services
 import * as authService from './services/authService'
+import * as profilesService from './services/profileService'
 
 // styles
 import './App.css'
 
 function App() {
   const [user, setUser] = useState(authService.getUser())
+  const [profile, setProfile] = useState({})
+
+  
+
   const navigate = useNavigate()
 
   const handleLogout = () => {
