@@ -10,16 +10,16 @@ import styles from './Signup.module.css'
 
 const Signup = ({ handleAuthEvt }) => {
   const navigate = useNavigate()
-  const imgInputRef = useRef(null)
+  // const imgInputRef = useRef(null)
 
   const [message, setMessage] = useState('')
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
+    fullName: '',
+    userName: '',
     password: '',
     passwordConf: '',
   })
-  const [photoData, setPhotoData] = useState({ photo: null })
+  // const [photoData, setPhotoData] = useState({ photo: null })
   const [isSubmitted, setIsSubmitted] = useState(false)
 
   const handleChange = evt => {
@@ -36,7 +36,7 @@ const Signup = ({ handleAuthEvt }) => {
         throw new Error('No VITE_BACK_END_SERVER_URL in front-end .env')
       }
       setIsSubmitted(true)
-      // await authService.signup(formData, photoData.photo)
+      await authService.signup(formData)
       handleAuthEvt()
       navigate('/')
     } catch (err) {
@@ -46,58 +46,60 @@ const Signup = ({ handleAuthEvt }) => {
     }
   }
 
-  const { name, email, password, passwordConf } = formData
+  const { fullName, userName, password, passwordConf } = formData
 
   const isFormInvalid = () => {
-    return !(name && email && password && password === passwordConf)
+    return !(fullName && userName && password && password === passwordConf)
   }
 
   return (
     <main className={styles.container}>
       <h1>Sign Up</h1>
       <p className={styles.message}>{message}</p>
-      <form autoComplete="off" onSubmit={handleSubmit} className={styles.form}>
-        <label className={styles.label}>
-          Name 
-        </label>
-          <input type="text" value={name} name="name" onChange={handleChange} />
-        <label className={styles.label}>
-          Email
-          </label>
-          <input
-            type="text"
-            value={email}
-            name="email"
-            onChange={handleChange}
-          />
+      <div className={styles.signup}>
+        <form autoComplete="off" onSubmit={handleSubmit} className={styles.form}>
           <label className={styles.label}>
-          Password
+            Full Name 
           </label>
-          <input
-            type="password"
-            value={password}
-            name="password"
-            onChange={handleChange}
-          />
-        <label className={styles.label}>
-          Confirm Password
-          </label>
-          <input
-            type="password"
-            value={passwordConf}
-            name="passwordConf"
-            onChange={handleChange}
-          />
-        <div>
-          <Link to="/">Cancel</Link>
-          <button
-            className={styles.button}
-            disabled={ isFormInvalid() || isSubmitted }
-          >
-            {!isSubmitted ? 'Sign Up' : '🚀 Sending...'}
-          </button>
-        </div>
-      </form>
+            <input type="text" value={fullName} name="fullName" onChange={handleChange} />
+          <label className={styles.label}>
+            UserName
+            </label>
+            <input
+              type="text"
+              value={userName}
+              name="userName"
+              onChange={handleChange}
+              />
+            <label className={styles.label}>
+            Password
+            </label>
+            <input
+              type="password"
+              value={password}
+              name="password"
+              onChange={handleChange}
+              />
+          <label className={styles.label}>
+            Confirm Password
+            </label>
+            <input
+              type="password"
+              value={passwordConf}
+              name="passwordConf"
+              onChange={handleChange}
+              />
+          <div>
+            <Link to="/">Cancel</Link>
+            <button
+              className={styles.button}
+              disabled={ isFormInvalid() || isSubmitted }
+              >
+              {!isSubmitted ? 'Sign Up' : '🚀 Sending...'}
+            </button>
+          </div>
+        </form>
+      </div>
     </main>
   )
 }

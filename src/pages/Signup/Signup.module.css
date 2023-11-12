@@ -42,6 +42,13 @@ input[type="file"] {
   margin-left: 16px;
 }
 
-.form > label:last-of-type {
-  margin-bottom: 1px;
+.form > input:last-of-type {
+  margin-bottom: 30px;
+}
+
+.signup {
+  border: 2px solid red;
+  border-radius: 40px;
+  padding: 30px;
+  padding-right: 50px;
 }
