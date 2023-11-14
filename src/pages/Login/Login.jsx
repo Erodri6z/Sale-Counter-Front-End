@@ -37,10 +37,10 @@ const LoginPage = ({ handleAuthEvt }) => {
     }
   }
 
-  const { email, password } = formData
+  const { userName, password } = formData
 
   const isFormInvalid = () => {
-    return !(email && password)
+    return !(userName && password)
   }
 
   return (
@@ -49,11 +49,11 @@ const LoginPage = ({ handleAuthEvt }) => {
       <p className={styles.message}>{message}</p>
       <form autoComplete="off" onSubmit={handleSubmit} className={styles.form}>
         <label className={styles.label}>
-          Email
+          UserName
           <input
             type="text"
-            value={email}
-            name="email"
+            value={userName}
+            name="userName"
             onChange={handleChange}
           />
         </label>
