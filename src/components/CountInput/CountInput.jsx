@@ -1,6 +1,7 @@
-const CountInput = () => {
+const CountInput = (props) => {
   return (
     <div>
+      <p>{props.title}</p>
       <form >
         <label>How many did you get?</label>
         <input 
