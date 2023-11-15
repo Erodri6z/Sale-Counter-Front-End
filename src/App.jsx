@@ -80,12 +80,16 @@ function App() {
     setUser(authService.getUser())
   }
 
+  const handleUpdateCount = (formData) => {
+    console.log(formData)
+  }
+
   return (
     <>
 
       <NavBar user={user} handleLogout={handleLogout} />
       <Routes>
-        <Route path="/" element={<Landing user={user} />} />
+        <Route path="/" element={<Landing user={user} profile={profile} handleUpdateCount={handleUpdateCount}/>} />
         <Route
           path="/auth/signup"
           element={<Signup handleAuthEvt={handleAuthEvt} />}
