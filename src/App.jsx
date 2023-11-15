@@ -24,6 +24,27 @@ function App() {
   const [user, setUser] = useState(authService.getUser())
   const [profile, setProfile] = useState()
 
+  useEffect(() => {
+    const fetchProfile = async () => {
+      const profileData = await profilesService.getProfile(user.profile)
+      setProfile(profileData)
+    }
+    fetchProfile()
+  }, [])
+
+  useEffect(() => {
+    const setupCounter = async () => {
+      if (profile) {
+        if (profile.sales.length < 1) {
+          createCounter()
+        } else if ( profile.sales.length > 1) {
+          clearCounter()
+        }
+      }
+    }
+    setupCounter()
+  }, [profile])
+
   const createCounter  = async () => {
     const initialData = {
       insuranceCount : 0,
