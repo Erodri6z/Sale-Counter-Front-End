@@ -38,6 +38,12 @@ function App() {
 
     setProfile(await newProfile)
   }
+
+
+  const clearCounter = async () => {
+    const newProfile = await profilesService.clearCounter(profile._id)
+    setProfile(await newProfile)
+  }
   console.log(profile)
 
 
@@ -56,6 +62,7 @@ function App() {
   return (
     <>
       <button onClick={createCounter}>CLick me </button>
+      <button onClick={clearCounter}>Clear </button>
       <NavBar user={user} handleLogout={handleLogout} />
       <Routes>
         <Route path="/" element={<Landing user={user} />} />
