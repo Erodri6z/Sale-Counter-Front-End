@@ -14,6 +14,25 @@ async function getProfile(profileId) {
   }
 }
 
+async function createSaleCounter(profileId, formData) {
+  try {
+    const res = await fetch(`${BASE_URL}/${profileId}`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    })
+    return await res.json()
+  } catch (err) {
+    throw new Error(err)
+  }
+}
 
 
-export { getProfile }
+
+
+
+
+export { getProfile, createSaleCounter }

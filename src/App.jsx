@@ -22,9 +22,24 @@ import './App.css'
 
 function App() {
   const [user, setUser] = useState(authService.getUser())
-  const [profile, setProfile] = useState({})
+  const [profile, setProfile] = useState()
 
-  
+  const createCounter  = async () => {
+    const initialData = {
+      insuranceCount : 0,
+      appleCareCount : 0,
+      prePaidPhones : 0,
+      accesoriesCount : 0,
+      acessoriesDollarAmount: 0,
+      generalElectronicsCount: 0,
+      generalElectronicsDollarAmount: 0
+    }
+    const newProfile = await profilesService.createSaleCounter(user.profile, initialData)
+
+    setProfile(await newProfile)
+  }
+  console.log(profile)
+
 
   const navigate = useNavigate()
 
@@ -40,6 +55,7 @@ function App() {
 
   return (
     <>
+      <button onClick={createCounter}>CLick me </button>
       <NavBar user={user} handleLogout={handleLogout} />
       <Routes>
         <Route path="/" element={<Landing user={user} />} />
