@@ -82,19 +82,10 @@ function App() {
 
   return (
     <>
-      <button onClick={createCounter}>CLick me </button>
-      <button onClick={clearCounter}>Clear </button>
+
       <NavBar user={user} handleLogout={handleLogout} />
       <Routes>
         <Route path="/" element={<Landing user={user} />} />
-        {/* <Route
-          path="/profiles"
-          element={
-            <ProtectedRoute user={user}>
-              <Profiles />
-            </ProtectedRoute>
-          }
-        /> */}
         <Route
           path="/auth/signup"
           element={<Signup handleAuthEvt={handleAuthEvt} />}
