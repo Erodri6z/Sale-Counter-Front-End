@@ -45,12 +45,12 @@ const Landing = ({ user, profile, handleUpdateCount } ) => {
         :
         (form === 'access')?
         <div className='count-input accesories'>
-          <PriceInput title='Accesories Price Count' profile={profile} handleUpdateCount={handleUpdateCount} variable={accesoriesDollarAmount} data={profile.sales[0].accesoriesDollarAmount}/>
+          <PriceInput title='Accesories Price Count' profile={profile} handleUpdateCount={handleUpdateCount} variable={accesoriesDollarAmount} data={profile.sales[0].accesoriesDollarAmount} itemCount={profile.sales[0].accesoriesCount}/>
         </div>
         :
         (form === 'gen-elec')?
         <div className='count-input gen-electrics'>
-          <PriceInput title='General Electronics Price count' profile={profile} handleUpdateCount={handleUpdateCount} variable={generalElectronicsDollarAmount} data={profile.sales[0].generalElectronicsDollarAmount}/>
+          <PriceInput title='General Electronics Price count' profile={profile} handleUpdateCount={handleUpdateCount} variable={generalElectronicsDollarAmount} data={profile.sales[0].generalElectronicsDollarAmount} itemCount={profile.sales[0].generalElectronicsCount}/>
         </div>
         :
         <span></span>
