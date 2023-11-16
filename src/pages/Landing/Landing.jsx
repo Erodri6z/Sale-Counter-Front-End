@@ -12,6 +12,8 @@ const Landing = ({ user, profile, handleUpdateCount } ) => {
   // console.log(insura)
   const appleCareCount = 'appleCareCount'
   const prePaidPhones = 'prePaioPhones'
+  const accesoriesDollarAmount = 'prePaioPhones'
+  const generalElectronicsDollarAmount = 'prePaioPhones'
   // const  = profile.sales(0).insuranceCount
   // const insuranceCount = profile.sales(0).insuranceCount
   // const insuranceCount = profile.sales(0).insuranceCount
@@ -33,22 +35,22 @@ const Landing = ({ user, profile, handleUpdateCount } ) => {
         :
         (form === 'apple')?
         <div className='count-input apple'>
-          <CountInput title='Apple-Care count' profile={profile} variable={appleCareCount}/> 
+          <CountInput title='Apple-Care count' profile={profile} handleUpdateCount={handleUpdateCount} variable={appleCareCount} data={profile.sales[0].appleCareCount}/> 
         </div>
         :
         (form === 'prepaid')?
         <div className='count-input prepaid'>
-          <CountInput title='Prepaid Phone count' profile={profile} variable={prePaidPhones}/> 
+          <CountInput title='Prepaid Phone count' profile={profile} handleUpdateCount={handleUpdateCount} variable={prePaidPhones} data={profile.sales[0].prePaidPhones}/> 
         </div>
         :
         (form === 'access')?
         <div className='count-input accesories'>
-          <PriceInput title='Accesories Price Count' profile={profile}/>
+          <PriceInput title='Accesories Price Count' profile={profile} handleUpdateCount={handleUpdateCount} variable={accesoriesDollarAmount} data={profile.sales[0].accesoriesDollarAmount}/>
         </div>
         :
         (form === 'gen-elec')?
         <div className='count-input gen-electrics'>
-          <PriceInput title='General Electronics Price count' profile={profile} />
+          <PriceInput title='General Electronics Price count' profile={profile} handleUpdateCount={handleUpdateCount} variable={generalElectronicsDollarAmount} data={profile.sales[0].generalElectronicsDollarAmount}/>
         </div>
         :
         <span></span>

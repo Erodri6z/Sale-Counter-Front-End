@@ -31,7 +31,7 @@ const CountInput = (props) => {
         <input 
         type="number"
         name={count}
-        value={formData}
+        value={formData.count}
         onChange={handleChange}
         />
         <button>Submit</button>
