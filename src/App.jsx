@@ -51,7 +51,7 @@ function App() {
       appleCareCount : 0,
       prePaidPhones : 0,
       accesoriesCount : 0,
-      acessoriesDollarAmount: 0,
+      accesoriesDollarAmount: 0,
       generalElectronicsCount: 0,
       generalElectronicsDollarAmount: 0
     }
@@ -86,7 +86,7 @@ function App() {
 
   return (
     <>
-
+    <button onClick={() => {clearCounter()}}>clear</button>
       <NavBar user={user} handleLogout={handleLogout} />
       <Routes>
         <Route path="/" element={<Landing user={user} profile={profile} handleUpdateCount={handleUpdateCount}/>} />

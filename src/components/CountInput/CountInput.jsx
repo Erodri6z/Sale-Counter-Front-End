@@ -2,7 +2,7 @@ import { useState } from "react"
 
 const CountInput = (props) => {
   const [formData, setFormData] = useState(props.data)
-  const val = props.data
+  // const val = props.data
   const count = props.variable
 
   console.log(props)
@@ -31,7 +31,7 @@ const CountInput = (props) => {
         <input 
         type="number"
         name={count}
-        value={count}
+        value={formData}
         onChange={handleChange}
         />
         <button>Submit</button>
