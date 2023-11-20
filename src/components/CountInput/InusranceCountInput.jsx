@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-const CountInput = (props) => {
+const InsuranceCountInput = (props) => {
   const [formData, setFormData] = useState(props.data)
   // const val = props.data
   const count = props.variable
@@ -40,4 +40,4 @@ const CountInput = (props) => {
   )
 }
 
-export default CountInput
+export default InsuranceCountInput

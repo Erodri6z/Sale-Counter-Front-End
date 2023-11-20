@@ -1,8 +1,8 @@
 // css
 import styles from './Landing.module.css'
 import Buttons from '../../components/Buttons/Buttons'
-import PriceInput from '../../components/PriceCount/PriceInput'
-import CountInput from '../../components/CountInput/CountInput'
+// import PriceInput from '../../components/PriceCount/PriceInput'
+// import CountInput from '../../components/CountInput/'
 import { useState } from 'react'
 
 const Landing = ({ user, profile, handleUpdateCount } ) => {

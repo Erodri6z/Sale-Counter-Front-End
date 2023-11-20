@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-const PriceInput = (props) => {
+const AccessoriesPriceInput = (props) => {
   const [formData, setFormData] = useState({
     ...props.data,
     accesoriesCount: props.dataCount
@@ -49,4 +49,4 @@ const PriceInput = (props) => {
   )
 }
 
-export default PriceInput
+export default AccessoriesPriceInput
