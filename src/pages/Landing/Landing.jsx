@@ -14,15 +14,11 @@ const Landing = ({ user, profile, handleUpdateCount } ) => {
   const prePaidPhones = 'prePaioPhones'
   const accesoriesDollarAmount = 'accesoriesDollarAmount'
   const generalElectronicsDollarAmount = 'generalElectronicsDollarAmount'
-  // const  = profile.sales(0).insuranceCount
-  // const insuranceCount = profile.sales(0).insuranceCount
-  // const insuranceCount = profile.sales(0).insuranceCount
-  // const insuranceCount = profile.sales(0).insuranceCount
 
   const updateForm = (newValue) => {
     setForm(newValue)
   }
-  // console.log(profile.sales[0].insuranceCount)
+
 
   return (
     <main className={styles.container}>

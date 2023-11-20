@@ -45,8 +45,24 @@ async function clearCounter(profileId) {
   }
 }
 
+async function updateCounter(profile, formData) {
+  try{
+    const res = await fetch( `${BASE_URL}/${profile}`,{
+      method: 'PUT',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type' : 'application/json'
+      },
+      body: JSON.stringify(formData)
+    })
+    return await res.json(profile)
+  } catch (err) {
+    throw new Error(err)
+  }
+}
 
 
 
 
-export { getProfile, createSaleCounter, clearCounter }
+
+export { getProfile, createSaleCounter, clearCounter, updateCounter }

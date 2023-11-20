@@ -80,21 +80,27 @@ function App() {
     setUser(authService.getUser())
   }
 
-  const handleUpdateCount = (formData, updatedCount) => {
-    setProfile((prevProfile) => ({
-      ...prevProfile,
-      sales: [
-        {
-        ...prevProfile[0],
-        accesoriesCount: updatedCount,
-        accesoriesDollarAmount: formData
-      },
-      ],
-    }))
-    console.log(profile)
+
+  const handleUpdateCount = async (formData) => {
+    const newProfile = await profilesService.updateCounter(profile._id, formData)
+    setProfile(newProfile)
+
   }
 
 
+  // const handleUpdateCountAndPrice = (formData, updatedCount) => {
+  //   setProfile((prevProfile) => ({
+  //     ...prevProfile,
+  //     sales: [
+  //       {
+  //       ...prevProfile[0],
+  //       accesoriesCount: updatedCount,
+  //       accesoriesDollarAmount: formData
+  //     },
+  //     ],
+  //   }))
+    
+  // }
 
   return (
     <>
