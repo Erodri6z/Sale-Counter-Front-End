@@ -31,27 +31,27 @@ const Landing = ({ user, profile, handleUpdateCount } ) => {
       {
         (form === 'insurance')?
         <div className='count-input insurance'>
-          <InsuranceCountInput title='Insurance count' handleUpdateCount={handleUpdateCount} profile={profile} variable={insuranceCount} data={profile.sales[0].insuranceCount}/> 
+          <InsuranceCountInput title='Insurance count' handleUpdateCount={handleUpdateCount} profile={profile} /> 
         </div>
         :
         (form === 'apple')?
         <div className='count-input apple'>
-          <AppleCareCountInput title='Apple-Care count' profile={profile} handleUpdateCount={handleUpdateCount} variable={appleCareCount} data={profile.sales[0].appleCareCount}/> 
+          <AppleCareCountInput title='Apple-Care count' profile={profile} handleUpdateCount={handleUpdateCount} /> 
         </div>
         :
         (form === 'prepaid')?
         <div className='count-input prepaid'>
-          <PrePaidCountInput title='Prepaid Phone count' profile={profile} handleUpdateCount={handleUpdateCount} variable={prePaidPhones} data={profile.sales[0].prePaidPhones}/> 
+          <PrePaidCountInput title='Prepaid Phone count' profile={profile} handleUpdateCount={handleUpdateCount} /> 
         </div>
         :
         (form === 'access')?
         <div className='count-input accesories'>
-          <AccessoriesPriceInput title='Accesories Price Count' profile={profile} handleUpdateCount={handleUpdateCount} variable={accesoriesDollarAmount} variableCount={'accesoriesCount'} data={profile.sales[0].accesoriesDollarAmount} dataCount={profile.sales[0].accesoriesCount}/>
+          <AccessoriesPriceInput title='Accesories Price Count' profile={profile} handleUpdateCount={handleUpdateCount} />
         </div>
         :
         (form === 'gen-elec')?
         <div className='count-input gen-electrics'>
-          <GeneralPriceInput title='General Electronics Price count' profile={profile} handleUpdateCount={handleUpdateCount} variable={generalElectronicsDollarAmount} data={profile.sales[0].generalElectronicsDollarAmount}/>
+          <GeneralPriceInput title='General Electronics Price count' profile={profile} handleUpdateCount={handleUpdateCount} />
         </div>
         :
         <span></span>
