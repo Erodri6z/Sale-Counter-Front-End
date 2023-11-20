@@ -4,6 +4,11 @@ import Buttons from '../../components/Buttons/Buttons'
 // import PriceInput from '../../components/PriceCount/PriceInput'
 // import CountInput from '../../components/CountInput/'
 import { useState } from 'react'
+import InsuranceCountInput from '../../components/CountInput/InusranceCountInput'
+import AppleCareCountInput from '../../components/CountInput/AppleCareCountInput'
+import PrePaidCountInput from '../../components/CountInput/PrePaioCountInput'
+import AccessoriesPriceInput from '../../components/PriceCount/AccessoriesPriceInput'
+import GeneralPriceInput from '../../components/PriceCount/GeneralPriceInput'
 
 const Landing = ({ user, profile, handleUpdateCount } ) => {
 
@@ -26,27 +31,27 @@ const Landing = ({ user, profile, handleUpdateCount } ) => {
       {
         (form === 'insurance')?
         <div className='count-input insurance'>
-          <CountInput title='Insurance count' handleUpdateCount={handleUpdateCount} profile={profile} variable={insuranceCount} data={profile.sales[0].insuranceCount}/> 
+          <InsuranceCountInput title='Insurance count' handleUpdateCount={handleUpdateCount} profile={profile} variable={insuranceCount} data={profile.sales[0].insuranceCount}/> 
         </div>
         :
         (form === 'apple')?
         <div className='count-input apple'>
-          <CountInput title='Apple-Care count' profile={profile} handleUpdateCount={handleUpdateCount} variable={appleCareCount} data={profile.sales[0].appleCareCount}/> 
+          <AppleCareCountInput title='Apple-Care count' profile={profile} handleUpdateCount={handleUpdateCount} variable={appleCareCount} data={profile.sales[0].appleCareCount}/> 
         </div>
         :
         (form === 'prepaid')?
         <div className='count-input prepaid'>
-          <CountInput title='Prepaid Phone count' profile={profile} handleUpdateCount={handleUpdateCount} variable={prePaidPhones} data={profile.sales[0].prePaidPhones}/> 
+          <PrePaidCountInput title='Prepaid Phone count' profile={profile} handleUpdateCount={handleUpdateCount} variable={prePaidPhones} data={profile.sales[0].prePaidPhones}/> 
         </div>
         :
         (form === 'access')?
         <div className='count-input accesories'>
-          <PriceInput title='Accesories Price Count' profile={profile} handleUpdateCount={handleUpdateCount} variable={accesoriesDollarAmount} variableCount={'accesoriesCount'} data={profile.sales[0].accesoriesDollarAmount} dataCount={profile.sales[0].accesoriesCount}/>
+          <AccessoriesPriceInput title='Accesories Price Count' profile={profile} handleUpdateCount={handleUpdateCount} variable={accesoriesDollarAmount} variableCount={'accesoriesCount'} data={profile.sales[0].accesoriesDollarAmount} dataCount={profile.sales[0].accesoriesCount}/>
         </div>
         :
         (form === 'gen-elec')?
         <div className='count-input gen-electrics'>
-          <PriceInput title='General Electronics Price count' profile={profile} handleUpdateCount={handleUpdateCount} variable={generalElectronicsDollarAmount} data={profile.sales[0].generalElectronicsDollarAmount}/>
+          <GeneralPriceInput title='General Electronics Price count' profile={profile} handleUpdateCount={handleUpdateCount} variable={generalElectronicsDollarAmount} data={profile.sales[0].generalElectronicsDollarAmount}/>
         </div>
         :
         <span></span>
