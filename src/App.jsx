@@ -80,9 +80,21 @@ function App() {
     setUser(authService.getUser())
   }
 
-  const handleUpdateCount = (formData) => {
-    console.log(formData)
+  const handleUpdateCount = (formData, updatedCount) => {
+    setProfile((prevProfile) => ({
+      ...prevProfile,
+      sales: [
+        {
+        ...prevProfile[0],
+        accesoriesCount: updatedCount,
+        accesoriesDollarAmount: formData
+      },
+      ],
+    }))
+    console.log(profile)
   }
+
+
 
   return (
     <>

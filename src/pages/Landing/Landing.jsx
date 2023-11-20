@@ -12,8 +12,8 @@ const Landing = ({ user, profile, handleUpdateCount } ) => {
   // console.log(insura)
   const appleCareCount = 'appleCareCount'
   const prePaidPhones = 'prePaioPhones'
-  const accesoriesDollarAmount = 'prePaioPhones'
-  const generalElectronicsDollarAmount = 'prePaioPhones'
+  const accesoriesDollarAmount = 'accesoriesDollarAmount'
+  const generalElectronicsDollarAmount = 'generalElectronicsDollarAmount'
   // const  = profile.sales(0).insuranceCount
   // const insuranceCount = profile.sales(0).insuranceCount
   // const insuranceCount = profile.sales(0).insuranceCount
@@ -45,12 +45,12 @@ const Landing = ({ user, profile, handleUpdateCount } ) => {
         :
         (form === 'access')?
         <div className='count-input accesories'>
-          <PriceInput title='Accesories Price Count' profile={profile} handleUpdateCount={handleUpdateCount} variable={accesoriesDollarAmount} data={profile.sales[0].accesoriesDollarAmount} itemCount={profile.sales[0].accesoriesCount}/>
+          <PriceInput title='Accesories Price Count' profile={profile} handleUpdateCount={handleUpdateCount} variable={accesoriesDollarAmount} variableCount={'accesoriesCount'} data={profile.sales[0].accesoriesDollarAmount} dataCount={profile.sales[0].accesoriesCount}/>
         </div>
         :
         (form === 'gen-elec')?
         <div className='count-input gen-electrics'>
-          <PriceInput title='General Electronics Price count' profile={profile} handleUpdateCount={handleUpdateCount} variable={generalElectronicsDollarAmount} data={profile.sales[0].generalElectronicsDollarAmount} itemCount={profile.sales[0].generalElectronicsCount}/>
+          <PriceInput title='General Electronics Price count' profile={profile} handleUpdateCount={handleUpdateCount} variable={generalElectronicsDollarAmount} data={profile.sales[0].generalElectronicsDollarAmount}/>
         </div>
         :
         <span></span>
