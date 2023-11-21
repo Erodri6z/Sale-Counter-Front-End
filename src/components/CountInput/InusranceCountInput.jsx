@@ -1,11 +1,7 @@
 import { useState } from "react"
 
 const InsuranceCountInput = (props) => {
-  const [formData, setFormData] = useState(props.data)
-  // const val = props.data
-  const count = props.variable
-
-  console.log(props)
+  const [formData, setFormData] = useState(props.profile.sales[0])
 
   const handleChange = (e) => {
     setFormData({...formData,
@@ -21,7 +17,6 @@ const InsuranceCountInput = (props) => {
       console.log(err)
     }
   }
-  console.log(formData)
 
   return (
     <div>
@@ -30,8 +25,8 @@ const InsuranceCountInput = (props) => {
         <label>How many did you get?</label>
         <input 
         type="number"
-        name={count}
-        value={formData.count}
+        name="insuranceCount"
+        value={formData.insuranceCount}
         onChange={handleChange}
         />
         <button>Submit</button>

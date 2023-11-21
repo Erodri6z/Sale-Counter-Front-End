@@ -46,8 +46,9 @@ async function clearCounter(profileId) {
 }
 
 async function updateCounter(profile, formData) {
+  // console.log("this is being passed as formData ", formData)
   try{
-    const res = await fetch( `${BASE_URL}/${profile}`,{
+    const res = await fetch( `${BASE_URL}/${profile}/update`,{
       method: 'PUT',
       headers: {
         'Authorization': `Bearer ${tokenService.getToken()}`,

@@ -13,16 +13,12 @@ import GeneralPriceInput from '../../components/PriceCount/GeneralPriceInput'
 const Landing = ({ user, profile, handleUpdateCount } ) => {
 
   const [form, setForm] = useState('Nothing selected')
-  const insuranceCount = 'insuranceCount'
-  // console.log(insura)
-  const appleCareCount = 'appleCareCount'
-  const prePaidPhones = 'prePaioPhones'
-  const accesoriesDollarAmount = 'accesoriesDollarAmount'
-  const generalElectronicsDollarAmount = 'generalElectronicsDollarAmount'
 
   const updateForm = (newValue) => {
     setForm(newValue)
   }
+
+  console.log(profile)
 
 
   return (

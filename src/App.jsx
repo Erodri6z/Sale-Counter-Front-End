@@ -43,7 +43,7 @@ function App() {
       }
     }
     setupCounter()
-  }, [profile])
+  }, [])
 
   const createCounter  = async () => {
     const initialData = {
@@ -105,6 +105,7 @@ function App() {
   return (
     <>
     <button onClick={() => {clearCounter()}}>clear</button>
+    <button onClick={() => {createCounter()}}>create</button>
       <NavBar user={user} handleLogout={handleLogout} />
       <Routes>
         <Route path="/" element={<Landing user={user} profile={profile} handleUpdateCount={handleUpdateCount}/>} />
