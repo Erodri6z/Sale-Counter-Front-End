@@ -6,8 +6,6 @@ const AppleCareCountInput = (props) => {
 
   console.log(props.profile.sales[0].appleCareCount)
 
-
-
   const handleChange = (e) => {
     const inputValue = (parseInt(e.target.value, 10 )|| 0)
     setInput(inputValue)   
@@ -31,7 +29,6 @@ const AppleCareCountInput = (props) => {
     }
   }
 
-  // console.log(input)
   return (
     <div>
       <p>{props.title}</p>
