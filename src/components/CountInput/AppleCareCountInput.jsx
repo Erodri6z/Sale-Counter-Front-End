@@ -1,28 +1,37 @@
 import { useState } from "react"
 
 const AppleCareCountInput = (props) => {
-  const [formData, setFormData] = useState(props.data)
-  // const val = props.data
-  const count = props.variable
+  const [formData, setFormData] = useState(props.profile.sales[0])
+  const [input, setInput] = useState('')
 
-  console.log(props)
+  console.log(props.profile.sales[0].appleCareCount)
+
+
 
   const handleChange = (e) => {
-    setFormData({...formData,
-      [e.target.name] : e.target.value
+    const inputValue = (parseInt(e.target.value, 10 )|| 0)
+    setInput(inputValue)   
+    const sum = formData.appleCareCount + inputValue
+    console.log(sum)
+    setFormData({
+      ...formData,
+      appleCareCount: sum
     })
   }
 
   const handleSubmit = async e => {
     e.preventDefault()
+
+    console.log(formData)
+    setInput('')
     try{
       props.handleUpdateCount(formData)
     }catch (err) {
       console.log(err)
     }
   }
-  console.log(formData)
 
+  // console.log(input)
   return (
     <div>
       <p>{props.title}</p>
@@ -30,8 +39,8 @@ const AppleCareCountInput = (props) => {
         <label>How many did you get?</label>
         <input 
         type="number"
-        name={count}
-        value={formData.count}
+        name="input"
+        value={input}
         onChange={handleChange}
         />
         <button>Submit</button>
