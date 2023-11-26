@@ -4,14 +4,19 @@ const InsuranceCountInput = (props) => {
   const [formData, setFormData] = useState(props.profile.sales[0])
   const [input, setInput] = useState('')
 
-  console.log(props.profile.sales[0].insuranceCount)
+  console.log(parseInt(props.profile.sales[0].insuranceCount) || 0)
 
 
 
   const handleChange = (e) => {
     const inputValue = (parseInt(e.target.value, 10 )|| 0)
     setInput(inputValue)   
-    const sum = formData.insuranceCount + inputValue
+    let sum = 0
+    if (formData.insuranceCount === 0) {
+      sum = inputValue
+    }else {
+      sum = formData.insuranceCount + inputValue
+    }
     console.log(sum)
     setFormData({
       ...formData,
