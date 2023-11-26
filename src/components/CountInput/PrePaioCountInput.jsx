@@ -9,7 +9,11 @@ const PrePaidCountInput = (props) => {
   const handleChange = (e) => {
     const inputValue = (parseInt(e.target.value, 10 )|| 0)
     setInput(inputValue)   
-    const sum = formData.prePaidPhones + inputValue
+    if (formData.prePaidPhones === 0) {
+      sum = inputValue
+    }else {
+      sum = formData.prePaidPhones + inputValue
+    }
     console.log(sum)
     setFormData({
       ...formData,
