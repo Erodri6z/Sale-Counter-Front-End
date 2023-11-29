@@ -9,6 +9,7 @@ const AppleCareCountInput = (props) => {
   const handleChange = (e) => {
     const inputValue = (parseInt(e.target.value, 10 )|| 0)
     setInput(inputValue)   
+    let sum = 0
     if (formData.appleCareCount === 0) {
       sum = inputValue
     }else {

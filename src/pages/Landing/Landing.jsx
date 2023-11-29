@@ -6,7 +6,7 @@ import Buttons from '../../components/Buttons/Buttons'
 import React, { useState } from 'react'
 import InsuranceCountInput from '../../components/CountInput/InusranceCountInput'
 import AppleCareCountInput from '../../components/CountInput/AppleCareCountInput'
-import PrePaidCountInput from '../../components/CountInput/PrePaioCountInput'
+import PrePaidCountInput from '../../components/CountInput/PrePaidCountInput'
 import AccessoriesPriceInput from '../../components/PriceCount/AccessoriesPriceInput'
 import GeneralPriceInput from '../../components/PriceCount/GeneralPriceInput'
 
