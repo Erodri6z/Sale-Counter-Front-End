@@ -1,36 +1,41 @@
 import { useState } from "react"
 
 const AccessoriesPriceInput = (props) => {
-  const [formData, setFormData] = useState({
-    ...props.data,
-    accesoriesCount: props.dataCount
-  })
+  const [formData, setFormData] = useState(props.profile.sales[0])
+  const [input, setInput] = useState('')
+  const [count, setCount] = useState('')
 
-  // const val = props.data
-  const price = props.variable
+
+
 
   console.log(formData)
 
   const handleChange = (e) => {
-    setFormData({...formData,
-      [e.target.name] : e.target.value,
+    const inputValue = (parseInt(e.target.value, 10 ) || 0)
+    setInput(inputValue)
+    let sum = 0
+    if (formData.accesoriesDollarAmount === 0){
+      sum = inputValue
+    }else {
+      sum = formData.accesoriesDollarAmount + inputValue
+    }
+    setFormData({
+      ...formData,
+      accesoriesDollarAmount: sum
     })
   }
 
 
   const handleSubmit = async e => {
     e.preventDefault()
+    console.log(formData)
+    setInput('')
     try{
-      setFormData((prevFormData) => ({
-        ...prevFormData,
-        accesoriesCount: parseInt(prevFormData.accesoriesCount) + 1
-    }))
       props.handleUpdateCount(formData)
     }catch (err) {
       console.log(err)
     }
   }
-  // console.log(formData)
 
   return (
     <div>
@@ -39,8 +44,8 @@ const AccessoriesPriceInput = (props) => {
         <label>How Much?</label>
         <input 
         type="number"
-        name={price}
-        value={formData.price}
+        name="input"
+        value={input}
         onChange={handleChange}
         />
         <button>Submit</button>
