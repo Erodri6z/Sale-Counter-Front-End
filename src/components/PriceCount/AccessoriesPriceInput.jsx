@@ -28,8 +28,13 @@ const AccessoriesPriceInput = (props) => {
 
   const handleSubmit = async e => {
     e.preventDefault()
-    console.log(formData)
+
     setInput('')
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      accesoriesCount: prevFormData.accesoriesCount === 0 ? prevFormData.accesoriesCount + 2 : prevFormData.accesoriesCount + 1,
+    }));
+
     try{
       props.handleUpdateCount(formData)
     }catch (err) {
