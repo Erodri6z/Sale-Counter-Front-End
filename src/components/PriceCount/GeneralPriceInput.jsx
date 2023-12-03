@@ -1,36 +1,49 @@
 import { useState } from "react"
 
 const GeneralPriceInput = (props) => {
-  const [formData, setFormData] = useState({
-    ...props.data,
-    accesoriesCount: props.dataCount
-  })
-
-  // const val = props.data
-  const price = props.variable
+  const [formData, setFormData] = useState(props.profile.sales[0])
+  const [input, setInput] = useState('')
 
   console.log(formData)
 
   const handleChange = (e) => {
-    setFormData({...formData,
-      [e.target.name] : e.target.value,
+    const inputValue = (parseInt(e.target.value, 10 ) || 0)
+    setInput(inputValue)
+    let sum = 0
+    if (formData.generalElectronicsCount === 0) {
+      sum = inputValue
+    }else {
+      sum = formData.generalElectronicsCount + inputValue
+    }
+    setFormData({
+      ...formData,
+      generalElectronicsCount: sum
     })
   }
 
 
   const handleSubmit = async e => {
     e.preventDefault()
-    try{
+    setInput('')
+
+      let sum = 1
+      if (formData.generalElectronicsDollarAmount === 0 ) {
+        sum = sum + 1
+      }else {
+        sum = formData.generalElectronicsDollarAmount + 1 
+      }
       setFormData((prevFormData) => ({
         ...prevFormData,
-        accesoriesCount: parseInt(prevFormData.accesoriesCount) + 1
-    }))
+        generalElectronicsDollarAmount: sum
+      }))
+
+
+    try{
       props.handleUpdateCount(formData)
     }catch (err) {
       console.log(err)
     }
   }
-  // console.log(formData)
 
   return (
     <div>
@@ -39,8 +52,8 @@ const GeneralPriceInput = (props) => {
         <label>How Much?</label>
         <input 
         type="number"
-        name={price}
-        value={formData.price}
+        name="input"
+        value={input}
         onChange={handleChange}
         />
         <button>Submit</button>
