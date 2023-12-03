@@ -3,7 +3,7 @@ import { useState } from "react"
 const AccessoriesPriceInput = (props) => {
   const [formData, setFormData] = useState(props.profile.sales[0])
   const [input, setInput] = useState('')
-  const [count, setCount] = useState('')
+  // const [count, setCount] = useState('')
 
 
 
@@ -14,7 +14,7 @@ const AccessoriesPriceInput = (props) => {
     const inputValue = (parseInt(e.target.value, 10 ) || 0)
     setInput(inputValue)
     let sum = 0
-    if (formData.accesoriesDollarAmount === 0){
+    if (formData.accesoriesDollarAmount === 0) {
       sum = inputValue
     }else {
       sum = formData.accesoriesDollarAmount + inputValue
@@ -28,14 +28,27 @@ const AccessoriesPriceInput = (props) => {
 
   const handleSubmit = async e => {
     e.preventDefault()
+    // let count = 0
+    
+
 
     setInput('')
-    setFormData((prevFormData) => ({
-      ...prevFormData,
-      accesoriesCount: prevFormData.accesoriesCount === 0 ? prevFormData.accesoriesCount + 2 : prevFormData.accesoriesCount + 1,
-    }));
+    // setFormData((prevFormData) => ({
+    //   ...prevFormData,
+    //   accesoriesCount: count
+    // }));
+    let sum = 1
+    if (formData.accesoriesCount === 0 ) {
+      sum = sum + 1
+    }else {
+      sum = formData.accesoriesCount + 1 
+    }
 
     try{
+      setFormData((prevFormData) => ({
+      ...prevFormData,
+      accesoriesCount: sum
+      }))
       props.handleUpdateCount(formData)
     }catch (err) {
       console.log(err)
