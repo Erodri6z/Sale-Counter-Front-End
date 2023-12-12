@@ -111,7 +111,7 @@ function App() {
         <Route 
           path="/" 
           element={
-            <ProtectedRoute>
+            <ProtectedRoute user={user}>
               <Landing 
               user={user} 
               profile={profile} 
