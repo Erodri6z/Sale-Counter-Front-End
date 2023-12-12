@@ -108,7 +108,18 @@ function App() {
     <button onClick={() => {createCounter()}}>create</button>
       <NavBar user={user} handleLogout={handleLogout} />
       <Routes>
-        <Route path="/" element={<Landing user={user} profile={profile} handleUpdateCount={handleUpdateCount}/>} />
+        <Route 
+          path="/" 
+          element={
+            <ProtectedRoute>
+              <Landing 
+              user={user} 
+              profile={profile} 
+              handleUpdateCount={handleUpdateCount}
+              />
+            </ProtectedRoute> 
+          } 
+        />
         <Route
           path="/auth/signup"
           element={<Signup handleAuthEvt={handleAuthEvt} />}
