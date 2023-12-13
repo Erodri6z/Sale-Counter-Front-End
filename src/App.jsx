@@ -82,17 +82,12 @@ function App() {
 
 
   const handleUpdateCount = async (formData) => {
-    setProfile((prevProfile) => {
-      const updatedProfile = {
-        ...prevProfile,
-        sales: [{
-          ...prevProfile[0],
-          ...formData
-        }]
-      }
-      return updatedProfile
-    })
-
+    try{
+      const newProfile = await profilesService.updateCounter(profile._id, formData)
+      setProfile(newProfile)
+    } catch (error) {
+      console.error('error upodating count', error)
+    }
   }
 
 

@@ -1,42 +1,35 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 
 const InsuranceCountInput = (props) => {
   const [formData, setFormData] = useState(props.profile.sales[0])
   const [input, setInput] = useState('')
+  
+  useEffect(() => {
+    props.handleUpdateCount(formData);
+  }, [formData]);
 
   console.log(parseInt(props.profile.sales[0].insuranceCount) || 0)
-
-
 
   const handleChange = (e) => {
     const inputValue = (parseInt(e.target.value, 10  )|| 0)
     setInput(inputValue)   
   }
 
-  const handleSubmit = async e => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-
-    console.log(formData)
-    let sum = 0
-    if (formData.insuranceCount === 0) {
-      sum = input
-    }else {
-      sum = parseInt(formData.insuranceCount, 10) + input
-    }
-    console.log("THE SUM is ", sum)
-    setFormData(prevState => ({
+  
+    const currentCount = parseInt(formData.insuranceCount, 10) || 0
+    const inputValue = parseInt(input, 10) || 0
+    const sum = currentCount + inputValue
+  
+    setFormData((prevState) => ({
       ...prevState,
-      insuranceCount: sum.toString(),
+      insuranceCount: sum,
     }))
+  
     setInput('')
-    try{
-      props.handleUpdateCount(formData)
-    }catch (err) {
-      console.log(err)
-    }
-  }
+  };
 
-  // console.log(input)
   return (
     <div>
       <p>{props.title}</p>
