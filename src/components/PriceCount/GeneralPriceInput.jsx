@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 const GeneralPriceInput = (props) => {
   const [formData, setFormData] = useState(props.profile.sales[0])
@@ -6,43 +6,32 @@ const GeneralPriceInput = (props) => {
 
   console.log(formData)
 
+  useEffect(()=> {
+    props.handleUpdateCount(formData)
+  }, [formData])
+
   const handleChange = (e) => {
     const inputValue = (parseInt(e.target.value, 10 ) || 0)
     setInput(inputValue)
-    let sum = 0
-    if (formData.generalElectronicsCount === 0) {
-      sum = inputValue
-    }else {
-      sum = formData.generalElectronicsCount + inputValue
-    }
-    setFormData({
-      ...formData,
-      generalElectronicsCount: sum
-    })
+
   }
 
 
   const handleSubmit = async e => {
     e.preventDefault()
+    const currentCount = parseInt(formData.generalElectronicsCount, 10) || 0
+    const currentPriceCount = parseInt(formData.generalElectronicsDollarAmount, 10) || 0
+    const inputValue = parseInt(input, 10) || 0
+    const sum = currentPriceCount + inputValue
+    const count = currentCount + 1
+
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      generalElectronicsCount: count,
+      generalElectronicsDollarAmount: sum
+    }))
+    
     setInput('')
-
-      let sum = 1
-      if (formData.generalElectronicsDollarAmount === 0 ) {
-        sum = sum + 1
-      }else {
-        sum = formData.generalElectronicsDollarAmount + 1 
-      }
-      setFormData((prevFormData) => ({
-        ...prevFormData,
-        generalElectronicsDollarAmount: sum
-      }))
-
-
-    try{
-      props.handleUpdateCount(formData)
-    }catch (err) {
-      console.log(err)
-    }
   }
 
   return (
