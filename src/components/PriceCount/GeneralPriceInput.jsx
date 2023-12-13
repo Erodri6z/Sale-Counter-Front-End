@@ -4,7 +4,7 @@ const GeneralPriceInput = (props) => {
   const [formData, setFormData] = useState(props.profile.sales[0])
   const [input, setInput] = useState('')
 
-  console.log(formData)
+
 
   useEffect(()=> {
     props.handleUpdateCount(formData)

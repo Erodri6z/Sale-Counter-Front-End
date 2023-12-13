@@ -3,12 +3,11 @@ import { useState, useEffect } from "react"
 const AppleCareCountInput = (props) => {
   const [formData, setFormData] = useState(props.profile.sales[0])
   const [input, setInput] = useState('')
-  
+
   useEffect(() => {
     props.handleUpdateCount(formData)
   }, [formData])
 
-  console.log(parseInt(props.profile.sales[0].appleCareCount) || 0)
 
   const handleChange = (e) => {
     const inputValue = (parseInt(e.target.value, 10  )|| 0)

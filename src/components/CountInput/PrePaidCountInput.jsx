@@ -8,7 +8,6 @@ const PrePaidCountInput = (props) => {
     props.handleUpdateCount(formData)
   }, [formData])
 
-  console.log(parseInt(props.profile.sales[0].prePaidPhones) || 0)
 
   const handleChange = (e) => {
     const inputValue = (parseInt(e.target.value, 10  )|| 0)
