@@ -1,39 +1,34 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 const AppleCareCountInput = (props) => {
   const [formData, setFormData] = useState(props.profile.sales[0])
   const [input, setInput] = useState('')
+  
+  useEffect(() => {
+    props.handleUpdateCount(formData)
+  }, [formData])
 
-  console.log(props.profile.sales[0].appleCareCount)
+  console.log(parseInt(props.profile.sales[0].appleCareCount) || 0)
 
   const handleChange = (e) => {
-    const inputValue = (parseInt(e.target.value, 10 )|| 0)
+    const inputValue = (parseInt(e.target.value, 10  )|| 0)
     setInput(inputValue)   
-    let sum = 0
-    if (formData.appleCareCount === 0) {
-      sum = inputValue
-    }else {
-      sum = formData.appleCareCount + inputValue
-    }
-    console.log(sum)
-    setFormData({
-      ...formData,
-      appleCareCount: sum
-    })
   }
 
-  const handleSubmit = async e => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-
-    console.log(formData)
+  
+    const currentCount = parseInt(formData.appleCareCount, 10) || 0
+    const inputValue = parseInt(input, 10) || 0
+    const sum = currentCount + inputValue
+  
+    setFormData((prevState) => ({
+      ...prevState,
+      appleCareCount: sum,
+    }))
+  
     setInput('')
-    try{
-      props.handleUpdateCount(formData)
-    }catch (err) {
-      console.log(err)
-    }
-  }
-
+  };
   return (
     <div>
       <p>{props.title}</p>

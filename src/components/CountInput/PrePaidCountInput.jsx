@@ -5,8 +5,8 @@ const PrePaidCountInput = (props) => {
   const [input, setInput] = useState('')
   
   useEffect(() => {
-    props.handleUpdateCount(formData);
-  }, [formData]);
+    props.handleUpdateCount(formData)
+  }, [formData])
 
   console.log(parseInt(props.profile.sales[0].prePaidPhones) || 0)
 
