@@ -9,25 +9,25 @@ const InsuranceCountInput = (props) => {
 
 
   const handleChange = (e) => {
-    const inputValue = (parseInt(e.target.value, 10 )|| 0)
+    const inputValue = (parseInt(e.target.value, 10  )|| 0)
     setInput(inputValue)   
-    let sum = 0
-    if (formData.insuranceCount === 0) {
-      sum = inputValue
-    }else {
-      sum = formData.insuranceCount + inputValue
-    }
-    console.log(sum)
-    setFormData({
-      ...formData,
-      insuranceCount: sum
-    })
   }
 
   const handleSubmit = async e => {
     e.preventDefault()
 
     console.log(formData)
+    let sum = 0
+    if (formData.insuranceCount === 0) {
+      sum = input
+    }else {
+      sum = parseInt(formData.insuranceCount, 10) + input
+    }
+    console.log("THE SUM is ", sum)
+    setFormData(prevState => ({
+      ...prevState,
+      insuranceCount: sum.toString(),
+    }))
     setInput('')
     try{
       props.handleUpdateCount(formData)

@@ -82,8 +82,16 @@ function App() {
 
 
   const handleUpdateCount = async (formData) => {
-    const newProfile = await profilesService.updateCounter(profile._id, formData)
-    setProfile(newProfile)
+    setProfile((prevProfile) => {
+      const updatedProfile = {
+        ...prevProfile,
+        sales: [{
+          ...prevProfile[0],
+          ...formData
+        }]
+      }
+      return updatedProfile
+    })
 
   }
 
