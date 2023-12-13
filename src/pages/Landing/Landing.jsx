@@ -4,6 +4,7 @@ import Buttons from '../../components/Buttons/Buttons'
 // import PriceInput from '../../components/PriceCount/PriceInput'
 // import CountInput from '../../components/CountInput/'
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import InsuranceCountInput from '../../components/CountInput/InusranceCountInput'
 import AppleCareCountInput from '../../components/CountInput/AppleCareCountInput'
 import PrePaidCountInput from '../../components/CountInput/PrePaidCountInput'
@@ -18,11 +19,14 @@ const Landing = ({ user, profile, handleUpdateCount } ) => {
     setForm(newValue)
   }
 
-  console.log(profile)
+  // console.log(profile)
 
 
   return (
     <main className={styles.container}>
+      <Link to="/results" state={{ profile }}>
+        <button>Results</button>
+      </Link>
       <h1>hello, {user ? user.userName : 'friend'}</h1>
       {
         user?(

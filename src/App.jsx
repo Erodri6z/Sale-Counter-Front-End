@@ -19,6 +19,7 @@ import * as profilesService from './services/profileService'
 
 // styles
 import './App.css'
+import ResultsPage from './pages/ResultsPage/ResultsPage'
 
 function App() {
   const [user, setUser] = useState(authService.getUser())
@@ -65,7 +66,6 @@ function App() {
     const newProfile = await profilesService.clearCounter(profile._id)
     setProfile(await newProfile)
   }
-  console.log(profile)
 
 
   const navigate = useNavigate()
@@ -122,6 +122,16 @@ function App() {
               />
             </ProtectedRoute> 
           } 
+        />
+        <Route
+          path='/results'
+          element={
+            <ProtectedRoute user={user}>
+              <ResultsPage
+                profile={profile}
+              />
+            </ProtectedRoute>
+          }
         />
         <Route
           path="/auth/signup"
