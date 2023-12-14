@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "react-router-dom"
+import { PieChart, Pie } from "recharts"
 
 const ResultsPage = ({ profile }) => {
 
@@ -14,11 +15,22 @@ Accessories: $${data.accesoriesDollarAmount}.
 General Electronics: $${data.generalElectronicsDollarAmount}`
     )
   }
-  
+  const pieData = [
+    { name: 'AllState', sales: data.insuranceCount, fill: "blue"},
+    { name: 'AppleCare', sales: data.appleCareCount, fill: "white" },
+    { name: 'Accessories', sales: data.accesoriesCount, fill: "silver" },
+    { name: 'General Electromics', sales: data.generalElectronicsCount, fill:"cyan" }
+  ]
+  console.log(pieData)
   return (
     <>
     <div>
-      <h1>This is where the results will be</h1>
+      <h1>Results</h1>
+      <div>
+        <PieChart width={300} height={300} >
+          <Pie dataKey="sales" data={pieData} outerRadius={100} />
+        </PieChart>
+      </div>
       <Link to="/">
         <button>Back to Counter?</button>
       </Link>
