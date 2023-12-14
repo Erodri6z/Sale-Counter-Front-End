@@ -91,20 +91,6 @@ function App() {
   }
 
 
-  // const handleUpdateCountAndPrice = (formData, updatedCount) => {
-  //   setProfile((prevProfile) => ({
-  //     ...prevProfile,
-  //     sales: [
-  //       {
-  //       ...prevProfile[0],
-  //       accesoriesCount: updatedCount,
-  //       accesoriesDollarAmount: formData
-  //     },
-  //     ],
-  //   }))
-    
-  // }
-
   return (
     <>
     <button onClick={() => {clearCounter()}}>clear</button>
