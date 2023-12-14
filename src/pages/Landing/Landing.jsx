@@ -11,12 +11,21 @@ import PrePaidCountInput from '../../components/CountInput/PrePaidCountInput'
 import AccessoriesPriceInput from '../../components/PriceCount/AccessoriesPriceInput'
 import GeneralPriceInput from '../../components/PriceCount/GeneralPriceInput'
 
-const Landing = ({ user, profile, handleUpdateCount } ) => {
+const Landing = ({ user, profile, handleUpdateCount, createCounter, clearCounter } ) => {
+
 
   const [form, setForm] = useState('Nothing selected')
 
   const updateForm = (newValue) => {
     setForm(newValue)
+  }
+
+  const reset = () => {
+    if (profile.sales.length === 0) {
+      createCounter()
+    } else {
+      clearCounter()
+    }
   }
 
   // console.log(profile)
@@ -28,6 +37,7 @@ const Landing = ({ user, profile, handleUpdateCount } ) => {
         <button>Results</button>
       </Link>
       <h1>Hello, {user ? user.userName : 'friend'}</h1>
+      <button onClick={() => reset()}>Reset</button>
       {
         user?(
         <>

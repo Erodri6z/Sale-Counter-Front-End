@@ -65,6 +65,7 @@ function App() {
   const clearCounter = async () => {
     const newProfile = await profilesService.clearCounter(profile._id)
     setProfile(await newProfile)
+    createCounter()
   }
 
 
