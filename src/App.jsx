@@ -93,8 +93,8 @@ function App() {
 
   return (
     <>
-    <button onClick={() => {clearCounter()}}>clear</button>
-    <button onClick={() => {createCounter()}}>create</button>
+    {/* <button onClick={() => {clearCounter()}}>clear</button>
+    <button onClick={() => {createCounter()}}>create</button> */}
       <NavBar user={user} handleLogout={handleLogout} />
       <Routes>
         <Route 
@@ -105,6 +105,8 @@ function App() {
               user={user} 
               profile={profile} 
               handleUpdateCount={handleUpdateCount}
+              createCounter={createCounter}
+              clearCounter={clearCounter}
               />
             </ProtectedRoute> 
           } 

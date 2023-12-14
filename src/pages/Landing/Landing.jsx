@@ -27,7 +27,7 @@ const Landing = ({ user, profile, handleUpdateCount } ) => {
       <Link to="/results" state={{ profile }}>
         <button>Results</button>
       </Link>
-      <h1>hello, {user ? user.userName : 'friend'}</h1>
+      <h1>Hello, {user ? user.userName : 'friend'}</h1>
       {
         user?(
         <>
