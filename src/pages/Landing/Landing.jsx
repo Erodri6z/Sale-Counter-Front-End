@@ -1,5 +1,5 @@
 // css
-import styles from './Landing.module.css'
+import  '../Landing/Landing.css'
 import Buttons from '../../components/Buttons/Buttons'
 // import PriceInput from '../../components/PriceCount/PriceInput'
 // import CountInput from '../../components/CountInput/'
@@ -34,15 +34,15 @@ const Landing = ({ user, profile, handleUpdateCount, createCounter, clearCounter
 
 
   return (
-    <main className={styles.container}>
+    <main className="container">
       <Link to="/results" state={{ profile }}>
-        <button>Results</button>
+        <button className='results-btn'>Results</button>
       </Link>
       <h1>Hello, {user ? user.userName : 'friend'}</h1>
       {
         profile.sales.length?(
           <>
-          <button onClick={() => reset()}>Reset</button>
+          <button onClick={() => reset()} className='reset-btn'>Reset</button>
         {
           (form === 'insurance')?
           <div className='count-input insurance'>
