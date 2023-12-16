@@ -3,6 +3,7 @@
   /* display: flex; */
   justify-content: center; 
   align-items: center;   
+  text-align: left;
 }
 
 .pie-chart{
@@ -13,5 +14,24 @@
 
 }
 .results-page {
+  text-align: left;
+}
+
+.copy-button{
+  padding: 10px;
+  border-radius: 10px;
+  border-style: none;
+  color: rgb(71, 10, 225);
+  background-color: rgb(204, 204, 204);
+}
+
+.back-btn{
+  padding:10px;
+  margin-left: 20px;
+  border-radius: 10px;
+  
+}
+
+.title{
   text-align: center;
 }
