@@ -28,6 +28,8 @@ const Landing = ({ user, profile, handleUpdateCount, createCounter, clearCounter
     }
   }
 
+  if (!profile) return (<h1>Loading...</h1>)
+
   // console.log(profile)
 
 
