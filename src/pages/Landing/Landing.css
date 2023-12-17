@@ -3,3 +3,25 @@
   align-items: center;
   flex-direction: column;
 }
+
+.results-a{
+  margin-left: 300px;
+  margin-top: 10px;
+}
+
+.results-btn{
+  background-color: #cccccc;
+  color: #2B506C;
+  padding: 10px;
+  border-radius: 10px;
+  border-style: none;
+
+}
+
+.custom-alert{
+  display: none;
+}
+
+.open{
+  display: flex;
+}
