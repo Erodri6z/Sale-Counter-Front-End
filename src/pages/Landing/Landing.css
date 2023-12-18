@@ -4,10 +4,10 @@
   flex-direction: column;
 }
 
-.results-a{
+/* .results-a{
   margin-left: 300px;
   margin-top: 10px;
-}
+} */
 
 .results-btn{
   background-color: #cccccc;
@@ -50,6 +50,31 @@
   font-weight: 900;
 }
 
+.reset-btn{
+  padding: 10px;
+  font-size: 20px;
+  border-style: none;
+  border-radius: 16px;
+  font-weight: 900;
+  background-color: #d55f4a;
+}
+
 .hide{
   display: none;
+}
+
+.get-started{
+  padding: 20px;
+  font-size: 20px;
+  border-style: none;
+  border-radius: 16px;
+  font-weight: 900;
+  background-color: #4a99d5;
+}
+
+.buttons{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
 }

@@ -46,6 +46,8 @@ const Landing = ({ user, profile, handleUpdateCount, createCounter, clearCounter
 
   return (
     <main className="container">
+      <div className='buttons'>
+      <button onClick={openMessage} className='reset-btn'>Reset</button>
       <Link to="/results" className='results-a' state={{ profile }}>
         <button className='results-btn' >
           <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-pie-chart-fill" viewBox="0 0 16 16">
@@ -53,11 +55,11 @@ const Landing = ({ user, profile, handleUpdateCount, createCounter, clearCounter
           </svg>
         </button>
       </Link>
+      </div>
       <h1>Hello, {user ? user.userName : 'friend'}</h1>
       {
         profile.sales.length?(
           <>
-          <button onClick={openMessage} className='reset-btn'>Reset</button>
           <div className={`custom-alert ${isOpen ? 'open' : ''}`}>
             <div className="alert-content">
               <p>Are you sure that you want to reset the counters to 0?</p>
@@ -99,8 +101,10 @@ const Landing = ({ user, profile, handleUpdateCount, createCounter, clearCounter
         </>
         )
         :
-        <button onClick={() => reset()}>Get Started</button>
+        <button className='get-started' onClick={() => reset()}>Get Started</button>
       }
+        <button className='get-started' onClick={() => reset()}>Get Started</button>
+
     </main>
   )
 }
