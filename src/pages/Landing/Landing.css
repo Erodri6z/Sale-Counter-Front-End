@@ -23,5 +23,29 @@
 }
 
 .open{
+  border: solid white 2px;
+  margin: 20px;
+  border-radius: 30px;
+  width: 300px;
   display: flex;
+  text-align: center;
+  padding: 38px;
+}
+
+.close-btn ,
+.confirm-reset {
+  padding: 10px;
+  margin-left: 20px;
+  border-style: none;
+  border-radius: 15px;
+}
+
+.close-btn{
+  background-color: red;
+  font-weight: 900;
+}
+
+.confirm-reset{
+  background-color: orange;
+  font-weight: 900;
 }
