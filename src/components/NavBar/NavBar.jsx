@@ -7,7 +7,7 @@ const NavBar = ({ user, handleLogout }) => {
     <nav>
       {user ?
         <ul className='nav-options'>
-          <li className='nav-item-hello'>Welcome, {user.userName}</li>
+          <li className='nav-item-hello'>Hi, {user.userName}</li>
           {/* <li><NavLink to="/profiles">Profiles</NavLink></li> */}
           <li className='nav-item'><NavLink to="" onClick={handleLogout}>LOG OUT</NavLink></li>
           {/* <li><NavLink to="/auth/change-password">Change Password</NavLink></li> */}
