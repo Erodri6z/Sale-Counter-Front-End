@@ -97,6 +97,7 @@ const Signup = ({ handleAuthEvt }) => {
             </button>
           </div>
         </form>
+        <p className={styles.p}>Already Have An Account? <Link to="/auth/login">Log In!</Link></p>
       </div>
     </main>
   )
