@@ -1,0 +1,25 @@
+.form-container{
+  justify-self: auto;
+  padding: 10px;
+  border: solid 2px;
+  border-radius: 20px;
+  width: 250px;
+  text-align: center;
+  margin-right: auto;
+}
+
+.counter{
+  width: 100px;
+  margin-right: 10px;
+  margin-top: 10px;
+  border-radius: 10px;
+
+}
+
+.submit{
+  background-color: lightskyblue;
+  font-weight: 900;
+  border-style: none;
+  padding: 7px;
+  border-radius: 10px;
+}

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import '../PriceCount/Price.css'
 
 const GeneralPriceInput = (props) => {
   const [formData, setFormData] = useState(props.profile.sales[0])
@@ -35,17 +36,18 @@ const GeneralPriceInput = (props) => {
   }
 
   return (
-    <div>
+    <div className="form-container">
       <p>{props.title}</p>
       <form onSubmit={handleSubmit}>
         <label>How Much?</label>
         <input 
         type="number"
         name="input"
+        className="counter"
         value={input}
         onChange={handleChange}
         />
-        <button>Submit</button>
+        <button className="submit">Submit</button>
       </form>
     </div>
   )
