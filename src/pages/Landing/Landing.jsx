@@ -1,8 +1,6 @@
 // css
 import  '../Landing/Landing.css'
 import Buttons from '../../components/Buttons/Buttons'
-// import PriceInput from '../../components/PriceCount/PriceInput'
-// import CountInput from '../../components/CountInput/'
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import InsuranceCountInput from '../../components/CountInput/InusranceCountInput'
