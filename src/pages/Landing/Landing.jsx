@@ -59,7 +59,9 @@ const Landing = ({ user, profile, handleUpdateCount, createCounter, clearCounter
           <button onClick={openMessage} className='reset-btn'>Reset</button>
           <div className={`custom-alert ${isOpen ? 'open' : ''}`}>
             <div className="alert-content">
+              <p>Are you sure that you want to reset the counters to 0?</p>
               <button onClick={closeMessage}>Close</button>
+              <button onClick={reset}>Burn it all down</button>
             </div>
           </div>
         {
