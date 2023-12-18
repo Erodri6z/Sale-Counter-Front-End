@@ -33,17 +33,19 @@ const AccessoriesPriceInput = (props) => {
   }
 
   return (
-    <div>
+    <div className="form-container">
       <p>{props.title}</p>
+      <p>{props.subtitle}</p>
       <form onSubmit={handleSubmit}>
-        <label>How Much?</label>
+        <label className="dollar-sign">$</label>
         <input 
         type="number"
         name="input"
+        className="counter"
         value={input}
         onChange={handleChange}
         />
-        <button>Submit</button>
+        <button className="submit">Submit</button>
       </form>
     </div>
   )

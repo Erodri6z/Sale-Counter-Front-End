@@ -23,3 +23,9 @@
   padding: 7px;
   border-radius: 10px;
 }
+
+.dollar-sign{
+  font-size: 20px;
+  font-weight: 900;
+  margin-right: -12px;
+}

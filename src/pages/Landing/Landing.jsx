@@ -85,12 +85,12 @@ const Landing = ({ user, profile, handleUpdateCount, createCounter, clearCounter
           :
           (form === 'access')?
           <div className='count-input accesories'>
-            <AccessoriesPriceInput title='Accesories Price Count' profile={profile} handleUpdateCount={handleUpdateCount} />
+            <AccessoriesPriceInput title='Accessories' subtitle="How Much?" profile={profile} handleUpdateCount={handleUpdateCount} />
           </div>
           :
           (form === 'gen-elec')?
           <div className='count-input gen-electrics'>
-            <GeneralPriceInput title='General Electronics Price count' profile={profile} handleUpdateCount={handleUpdateCount} />
+            <GeneralPriceInput title='General Electronics' subtitle="How Much?" profile={profile} handleUpdateCount={handleUpdateCount} />
           </div>
           :
           <span></span>
