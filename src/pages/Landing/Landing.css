@@ -4,6 +4,10 @@
   flex-direction: column;
 }
 
+.count-input{
+  margin-left: auto;
+  margin-right: auto;
+}
 /* .results-a{
   margin-left: 300px;
   margin-top: 10px;

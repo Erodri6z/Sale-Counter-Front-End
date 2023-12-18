@@ -56,7 +56,7 @@ const Landing = ({ user, profile, handleUpdateCount, createCounter, clearCounter
         </button>
       </Link>
       </div>
-      <h1>Hello, {user ? user.userName : 'friend'}</h1>
+      <h3>{user ? user.userName : 'Dont have a name, huh?'}</h3>
       {
         profile.sales.length?(
           <>
@@ -103,8 +103,6 @@ const Landing = ({ user, profile, handleUpdateCount, createCounter, clearCounter
         :
         <button className='get-started' onClick={() => reset()}>Get Started</button>
       }
-        <button className='get-started' onClick={() => reset()}>Get Started</button>
-
     </main>
   )
 }

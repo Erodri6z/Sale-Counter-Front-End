@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import '../CountInput/Count.css'
 
 const AppleCareCountInput = (props) => {
   const [formData, setFormData] = useState(props.profile.sales[0])
@@ -29,17 +30,18 @@ const AppleCareCountInput = (props) => {
     setInput('')
   };
   return (
-    <div>
+    <div  className="form-container">
       <p>{props.title}</p>
       <form onSubmit={handleSubmit} >
         <label>How many did you get?</label>
         <input 
         type="number"
         name="input"
+        className="counter"
         value={input}
         onChange={handleChange}
         />
-        <button>Submit</button>
+        <button className="submit">Submit</button>
       </form>
     </div>
   )
