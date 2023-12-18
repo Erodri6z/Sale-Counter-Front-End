@@ -31,6 +31,7 @@ const Landing = ({ user, profile, handleUpdateCount, createCounter, clearCounter
 
   const openMessage = () => {
   setIsOpen(true)
+  setForm("nothing is selected")
   }
 
   const closeMessage = () => {
@@ -92,7 +93,9 @@ const Landing = ({ user, profile, handleUpdateCount, createCounter, clearCounter
           :
           <span></span>
         }
-        <Buttons onUpdateForm={updateForm} />
+        <div className={`${isOpen ? 'hide' : ''}`}>
+          <Buttons onUpdateForm={updateForm} />
+        </div>
         </>
         )
         :
