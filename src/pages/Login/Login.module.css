@@ -1,18 +1,17 @@
 input {
   margin-left: 16px;
+  margin-bottom:10px;
   padding: 4px 8px;
   font-size: 16px;
-  width: 300px;
+  width: 200px;
 }
 
-input[type="file"] {
-  padding: 0;
-}
 
 .container {
   display: flex;
   align-items: center;
   flex-direction: column;
+  padding: 20px;
 }
 
 .message {
@@ -33,15 +32,12 @@ input[type="file"] {
 .label {
   width: 100%;
   display: flex;
-  justify-content: end;
+  justify-content: left;
   align-items: center;
-  margin-bottom: 8px;
+  margin: 1px 0px 5px 30px
 }
 
 .button {
   margin-left: 16px;
 }
 
-.form > label:last-of-type {
-  margin-bottom: 16px;
-}

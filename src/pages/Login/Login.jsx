@@ -50,22 +50,22 @@ const LoginPage = ({ handleAuthEvt }) => {
       <form autoComplete="off" onSubmit={handleSubmit} className={styles.form}>
         <label className={styles.label}>
           UserName
+          </label>
           <input
             type="text"
             value={userName}
             name="userName"
             onChange={handleChange}
           />
-        </label>
         <label className={styles.label}>
           Password
+          </label>
           <input
             type="password"
             value={password}
             name="password"
             onChange={handleChange}
           />
-        </label>
         <div>
           <Link to="/">Cancel</Link>
           <button className={styles.button} disabled={isFormInvalid()}>
