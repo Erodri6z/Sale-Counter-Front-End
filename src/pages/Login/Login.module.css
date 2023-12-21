@@ -1,7 +1,6 @@
 input {
-  margin-left: 16px;
   margin-bottom:10px;
-  padding: 4px 8px;
+  padding: 4px 0 0 0;
   font-size: 16px;
   width: 200px;
 }
@@ -37,7 +36,20 @@ input {
   margin: 1px 0px 5px 30px
 }
 
+.button:disabled{
+  color: #dd1b16;
+  background-color: #0F0B16;
+  border-style: none;
+  border: solid 1px red;
+}
+
 .button {
   margin-left: 16px;
+  padding: 5px;
+  background-color: rgb(79, 79, 222);
+  border-radius: 10px;
+  color: black;
+  border-style: none;
 }
+
 
