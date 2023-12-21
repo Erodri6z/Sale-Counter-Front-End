@@ -18,13 +18,14 @@ General Electronics: $${data.generalElectronicsDollarAmount}`
     )
   }
   const pieData = [
-    { name: 'AllState', sales: data.insuranceCount, fill: "blue"},
+    { name: 'AllState', sales: data.insuranceCount, fill: "blue" },
     { name: 'AppleCare', sales: data.appleCareCount, fill: "white" },
     { name: 'Accessories', sales: data.accesoriesCount, fill: "red" },
-    { name: 'prePaid Phones', sales: data.prePaidPhones, fill: "orange"},
+    { name: 'prePaid Phones', sales: data.prePaidPhones, fill: "orange" },
     { name: 'General Electromics', sales: data.generalElectronicsCount, fill:"yellow" }
   ]
-  console.log(pieData)
+
+  
   return (
     <>
     <div className="results-page">
