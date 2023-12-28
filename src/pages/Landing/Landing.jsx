@@ -94,7 +94,7 @@ const Landing = ({ user, profile, handleUpdateCount, createCounter, clearCounter
           <span></span>
         }
         <div className={`${isOpen ? 'hide' : ''}`}>
-          <Buttons onUpdateForm={updateForm} profile={profile}/>
+          <Buttons onUpdateForm={updateForm} profile={profile} form={form}/>
         </div>
         </>
         )

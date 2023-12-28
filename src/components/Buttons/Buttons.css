@@ -9,10 +9,20 @@
 }
 
 .select-buttons{
+  border-style: none;
   height: 80px;
   width: 80px;
   border-radius: 10px;
   background-color: #00A3B9;
+  font-weight: 900
+}
+
+.select-buttons:active{
+  background-color: #12e3ff;
+}
+
+.active-btn{
+  background-color: rgb(255, 0, 0);
 }
 
 .bottom-btns{
