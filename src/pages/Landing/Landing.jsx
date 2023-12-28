@@ -25,6 +25,7 @@ const Landing = ({ user, profile, handleUpdateCount, createCounter, clearCounter
     } else {
       clearCounter()
     }
+    closeMessage()
   }
 
   const openMessage = () => {
