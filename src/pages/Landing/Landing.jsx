@@ -55,7 +55,7 @@ const Landing = ({ user, profile, handleUpdateCount, createCounter, clearCounter
         </button>
       </Link>
       </div>
-      <h3>{user ? user.userName : 'Dont have a name, huh?'}</h3>
+      <h3>{user ? user.userName.charAt(0).toUpperCase() + user.userName.slice(1) : 'Dont have a name, huh?'}</h3>
       {
         profile.sales.length?(
           <>
