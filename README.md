@@ -7,9 +7,9 @@ The Mobile Sales Tracker App, built with React.js, is specifically designed to a
 
 ## Features
 
- - **Sales Logging :** Easily record and track sales and commisionable transactions!
- - **Graphic Representation:** Access visual graphs that provide a clear and accurate representation of sales performance in each category.
- - **User-Friendly Interface:** The app prioritizes a clean and intuitive user interface, ensuring ease of use for mobile representatives on the go.
+ - **Sales Logging :** Easily record and track sales and commissionable transactions!
+ - **Graphic Representation:** Access visual graphs that provide a clear and accurate representation of sales performance in each category!
+ - **User-Friendly Interface:** The app prioritizes a clean and intuitive user interface, ensuring ease of use for mobile representatives on the go!
 
 ## Deployment 
 
