@@ -67,16 +67,12 @@ const LoginPage = ({ handleAuthEvt }) => {
             onChange={handleChange}
           />
         <div>
-          <Link to="/auth/signup">
-            <button className={styles.button}>
-              Sign Up Instead
-            </button>
-            </Link>
           <button className={styles.button} disabled={isFormInvalid()}>
             Log In
           </button>
         </div>
       </form>
+      <p className={styles.p}>Dont Have An Account <Link to="/auth/signup">Sign Up!</Link></p>
     </main>
   )
 }
