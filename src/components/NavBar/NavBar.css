@@ -1,5 +1,5 @@
 nav {
-  background-color: #2B506C;
+  background-image: linear-gradient(to right, #0b8696, #317b96, #2b4b65, #242c3f, #0f0b16);  
   padding: 10px;
   display: flex;
   justify-content: space-between;
@@ -14,6 +14,7 @@ nav {
 
 .nav-item-hello {
   margin-right: 10px;
+  color: black;
 }
 
 .nav-item {

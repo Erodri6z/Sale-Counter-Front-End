@@ -13,7 +13,11 @@ body {
   font-family: 'Hedvig Letters Serif', serif;
 
   color: rgba(255, 255, 255, 0.87);
-  background-color: #0F0B16;
+  background-color: #0F0B16; 
+  background-color: #0f0b16;
+  opacity: 1;
+  background-image: radial-gradient(#16183d 1.05px, #0f0b16 1.05px);
+  background-size: 21px 21px;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;

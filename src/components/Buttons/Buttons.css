@@ -22,7 +22,8 @@
 }
 
 .active-btn{
-  background-color: rgb(255, 0, 0);
+  border:1px solid #12e3ff;
+  background-image: linear-gradient(to top, #00a3b9, #3a7396, #434762, #2d232e, #000000);
 }
 
 .bottom-btns{
