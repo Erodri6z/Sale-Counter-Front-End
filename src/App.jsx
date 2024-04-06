@@ -31,7 +31,8 @@ function App() {
       setProfile(profileData)
     }
     fetchProfile()
-  }, [])
+
+  }, [user])
 
   useEffect(() => {
     const setupCounter = async () => {

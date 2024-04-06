@@ -1,7 +1,7 @@
 // css
 import  '../Landing/Landing.css'
 import Buttons from '../../components/Buttons/Buttons'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import InsuranceCountInput from '../../components/CountInput/InusranceCountInput'
 import AppleCareCountInput from '../../components/CountInput/AppleCareCountInput'
@@ -14,6 +14,10 @@ const Landing = ({ user, profile, handleUpdateCount, createCounter, clearCounter
 
   const [form, setForm] = useState('Nothing selected')
   const [isOpen, setIsOpen] = useState(false)
+  // const [isLoading, setIsLoading] = useState(false)
+
+
+  
 
   const updateForm = (newValue) => {
     setForm(newValue)
@@ -40,6 +44,7 @@ const Landing = ({ user, profile, handleUpdateCount, createCounter, clearCounter
 
   if (!profile) return (<h1>Loading...</h1>)
 
+  // if (!profile)
   // console.log(profile)
 
 
