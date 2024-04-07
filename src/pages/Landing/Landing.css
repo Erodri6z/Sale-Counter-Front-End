@@ -89,56 +89,63 @@
 }
 
 .layer1{
-  border: 2px solid red;
-  width: 300px;
-  border-radius: 60px;
-  animation: rotateleft 1s ease-in-out infinite forwards ;
+  border: 4px solid #0b8696;
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  animation: rotateleft 1.5s ease-in-out infinite both ;
 }
 
 .layer2{
-  border-radius: 60px;
+  border-radius: 100px;
   margin: 40px auto;
   padding: 4px;
-  border: 2px solid blue;
-  width: 312px;
-  height: 100px;
-  animation: rotateRight 1s ease-in-out infinite forwards ;
+  border: 4px solid #0b8696;
+  width: 212px;
+  height: 212px;
+  animation: rotateRight 1.6s ease-in-out infinite both;
 
 }
 
 
 @keyframes rotateleft {
   0% {
-    border-color: red transparent transparent transparent;
+    transform: rotate(0deg);
+    border-color: #0b8696 transparent transparent transparent;
   }
   25% {
-    border-color: transparent red transparent transparent;
+    border-color: transparent #0b8696 transparent transparent;
   }
   50% {
-    border-color: transparent transparent red transparent;
+    transform: rotate(180deg);
+    border-color: transparent transparent #0b8696 transparent;
   }
   75% {
-    border-color: transparent transparent transparent red;
+    border-color: transparent transparent transparent #0b8696;
   }
   100% {
-    border-color: red transparent transparent transparent;
+    transform: rotate(360deg);
+    border-color:#0b8696 transparent transparent transparent;
   }
 }
 
 @keyframes rotateRight {
   0% {
-    border-color: transparent transparent transparent blue ;
+    transform: rotate(360deg);
+    border-color: transparent transparent transparent #0b8696 ;
   }
   25% {
-    border-color: transparent transparent blue  transparent;
+    border-color: transparent transparent #0b8696  transparent;
   }
   50% {
-    border-color: transparent blue transparent  transparent;
+    transform: rotate(180deg);
+    border-color: transparent #0b8696 transparent  transparent;
   }
   75% {
-    border-color: blue transparent transparent transparent ;
+    border-color: #0b8696 transparent transparent transparent ;
   }
   100% {
-    border-color:  transparent transparent transparent blue;
+    transform: rotate(0deg);
+    border-color:  transparent transparent transparent #0b8696;
   }
 }
