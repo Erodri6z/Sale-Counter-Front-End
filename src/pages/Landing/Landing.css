@@ -92,7 +92,7 @@
   border: 2px solid red;
   width: 300px;
   border-radius: 60px;
-  animation: rotateleft 0.8s ease-in-out infinite forwards ;
+  animation: rotateleft 1s ease-in-out infinite forwards ;
 }
 
 .layer2{
@@ -102,6 +102,8 @@
   border: 2px solid blue;
   width: 312px;
   height: 100px;
+  animation: rotateRight 1s ease-in-out infinite forwards ;
+
 }
 
 
@@ -123,3 +125,20 @@
   }
 }
 
+@keyframes rotateRight {
+  0% {
+    border-color: transparent transparent transparent blue ;
+  }
+  25% {
+    border-color: transparent transparent blue  transparent;
+  }
+  50% {
+    border-color: transparent blue transparent  transparent;
+  }
+  75% {
+    border-color: blue transparent transparent transparent ;
+  }
+  100% {
+    border-color:  transparent transparent transparent blue;
+  }
+}
