@@ -42,7 +42,7 @@ const Landing = ({ user, profile, handleUpdateCount, createCounter, clearCounter
   }
 
 
-  if (!profile) return (<h1>Loading...</h1>)
+  if(profile) return (<h1 className='loading'>Loading...</h1>)
 
   // if (!profile)
   // console.log(profile)

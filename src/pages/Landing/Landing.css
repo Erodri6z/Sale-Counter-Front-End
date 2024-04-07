@@ -83,3 +83,9 @@
   justify-content: space-between;
   padding: 10px;
 }
+
+.loading{
+  text-align: center;
+  margin: 4rem;
+  
+}
