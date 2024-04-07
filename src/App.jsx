@@ -20,6 +20,7 @@ import * as profilesService from './services/profileService'
 // styles
 import './App.css'
 import ResultsPage from './pages/ResultsPage/ResultsPage'
+import NotFound from './pages/NotFoundPage/NotFoundPage'
 
 function App() {
   const [user, setUser] = useState(authService.getUser())
@@ -139,6 +140,11 @@ function App() {
             </ProtectedRoute>
           }
         />
+        <Route
+          element={
+            <NotFound /> 
+          }
+        /> 
       </Routes>
     </>
   )
