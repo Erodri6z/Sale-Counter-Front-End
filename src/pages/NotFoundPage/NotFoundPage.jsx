@@ -2,7 +2,10 @@ import React from "react";
 
 const NotFound = () => {
   return(
-    <h1>You lost?</h1>
+<div style={{ textAlign: 'center', marginTop: '50px' }}>
+      <h1>404 - Page Not Found</h1>
+      <p>You lost?</p>
+    </div>
   )
 
 }
