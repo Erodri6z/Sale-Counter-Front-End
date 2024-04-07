@@ -42,7 +42,7 @@ const Landing = ({ user, profile, handleUpdateCount, createCounter, clearCounter
   }
 
 
-  if(profile) return (
+  if(!profile) return (
     <div>
       <div className='layer2'>
         <div className='layer1'>
