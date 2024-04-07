@@ -91,13 +91,35 @@
 .layer1{
   border: 2px solid red;
   width: 300px;
+  border-radius: 60px;
+  animation: rotateleft 0.8s ease-in-out infinite forwards ;
 }
 
 .layer2{
+  border-radius: 60px;
   margin: 40px auto;
   padding: 4px;
   border: 2px solid blue;
   width: 312px;
   height: 100px;
+}
+
+
+@keyframes rotateleft {
+  0% {
+    border-color: red transparent transparent transparent;
+  }
+  25% {
+    border-color: transparent red transparent transparent;
+  }
+  50% {
+    border-color: transparent transparent red transparent;
+  }
+  75% {
+    border-color: transparent transparent transparent red;
+  }
+  100% {
+    border-color: red transparent transparent transparent;
+  }
 }
 
